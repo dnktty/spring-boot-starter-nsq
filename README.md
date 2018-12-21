@@ -22,7 +22,7 @@ mq:
     host: mq-server
     port: 4161
   producer:
-    host: 192.168.31.251
+    host: mq-server
     port: 4150
 ```
 * 用例代码
