@@ -2,6 +2,7 @@ package com.dit72.nsq.queue.config;
 
 import com.dit72.nsq.queue.entity.QueueProducerProperties;
 import com.dit72.nsq.queue.service.QueueProducer;
+import com.github.brainlag.nsq.NSQProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;

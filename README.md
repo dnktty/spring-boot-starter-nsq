@@ -41,21 +41,19 @@ public class QueueTest {
     @Test
     public void testQueueSendAndHandler(){
         //消费端
-        queueConsumer.listener("eth-sync", "c1", (message) -> {
-            logger.info("received: " + StringUtils.toString(message.getMessage()));
-            message.finished();
-        });
+		queueConsumer.listener(QueueChannelEnum.COIN_SCAN_IN_CEN_HANDLER.appendPrefix(CoinEnum.ETH.name()), "c1", (message) -> {
+			QMessage<Tx> qm = QMessageUtil.parse(message, Tx.class);
+			ethService.addTxToSys( CoinEnum.ETH, qm.getData());
+			message.finished();
+		});
 
         //发送端
         DcTx dt = new DcTx();
         dt.setDcId(1001);
         dt.setSeqNo("xxx121");
-        queueProducer.send("eth-sync", JsonUtil.toJsonString(dt));
+        queueProducer.send("chaneel-one", dt);
+        //queueProducer.send(QueueChannelEnum.COIN_SCAN_IN_BIZ_HANDLER.appendPrefix(wallet.getSysId()), dt); //通道建议用枚举
 
-        dt = new DcTx();
-        dt.setDcId(1002);
-        dt.setSeqNo("xxx122");
-        queueProducer.send("eth-sync", JsonUtil.toJsonString(dt));
     }
 }
 ```

@@ -2,6 +2,8 @@ package com.dit72.nsq.queue.config;
 
 import com.dit72.nsq.queue.entity.QueueConsumerProperties;
 import com.dit72.nsq.queue.service.QueueConsumer;
+import com.github.brainlag.nsq.lookup.DefaultNSQLookup;
+import com.github.brainlag.nsq.lookup.NSQLookup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
