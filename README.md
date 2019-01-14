@@ -1,4 +1,4 @@
-
+## 监控台 http://127.0.0.1:4171/
 ## 说明
 * 这是一个spring boot快速集成的消息队列nsq服务, 
 * [nsq和Kafka对比](https://www.liuin.cn/2018/07/11/%E5%88%86%E5%B8%83%E5%BC%8F%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97-NSQ-%E5%92%8C-Kafka-%E5%AF%B9%E6%AF%94/)
